@@ -4,10 +4,4 @@
 
 ---
 
-## 📊 数据统计
-
-![Zoroaaa's GitHub stats](https://github-readme-stats.vercel.app/api?username=Zoroaaa&show_icons=true&theme=default)
-
----
-
-*✨ 感谢你的访问！*
+![GitHub Stats](./github-metrics.svg)
