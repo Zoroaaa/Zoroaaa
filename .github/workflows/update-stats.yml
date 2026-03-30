@@ -2,7 +2,7 @@ name: Update GitHub Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天更新一次
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Generate Stats
         uses: lowlighter/metrics@latest
         with:
@@ -19,8 +20,11 @@ jobs:
           base: header, activity, community, repositories
           config_timezone: Asia/Shanghai
           filename: github-metrics.svg
+          output_action: none
+
       - name: Push
         run: |
+          cp /metrics_renders/github-metrics.svg ./github-metrics.svg
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add github-metrics.svg
